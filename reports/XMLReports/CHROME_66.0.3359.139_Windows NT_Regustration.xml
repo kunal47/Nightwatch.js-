@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="2"
+            failures="0"
+            tests="2">
+
+  <testsuite name="Regustration"
+    errors="2" failures="0" hostname="" id="" package="Regustration" skipped="0"
+    tests="2" time="74.90" timestamp="Thu, 24 May 2018 17:27:33 GMT">
+  
+    <testcase name="Test Registration Page" classname="Regustration" time="74.50" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Manager Login" classname="Regustration" time="0.3990" assertions="0">
+    </testcase>
+  
+
+  
+    <system-err>
+      ERROR: Unable to locate element: &#34;//html/body/div/div/div[2]/div/div[4]/div/form/div/input&#34; using: xpath
+    at Object.Test Registration Page (C:\Users\Kunal\Desktop\n\tests\Regustration.js:23:11)
+    at Module.call (C:\Users\Kunal\Desktop\n\node_modules\nightwatch\lib\runner\module.js:62:34)
+    at C:\Users\Kunal\Desktop\n\node_modules\nightwatch\lib\runner\testcase.js:70:29
+    at _fulfilled (C:\Users\Kunal\Desktop\n\node_modules\q\q.js:834:54)
+    at self.promiseDispatch.done (C:\Users\Kunal\Desktop\n\node_modules\q\q.js:863:30)
+    at Promise.promise.promiseDispatch (C:\Users\Kunal\Desktop\n\node_modules\q\q.js:796:13)
+    at C:\Users\Kunal\Desktop\n\node_modules\q\q.js:556:49
+    at runSingle (C:\Users\Kunal\Desktop\n\node_modules\q\q.js:137:13)
+    at flush (C:\Users\Kunal\Desktop\n\node_modules\q\q.js:125:13)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+ERROR: Unable to locate element: &#34;//html/body/div/div/div[2]/div/div[1]/button[1]&#34; using: xpath
+    at Object.Manager Login (C:\Users\Kunal\Desktop\n\tests\Regustration.js:45:9)
+    at Module.call (C:\Users\Kunal\Desktop\n\node_modules\nightwatch\lib\runner\module.js:62:34)
+    at C:\Users\Kunal\Desktop\n\node_modules\nightwatch\lib\runner\testcase.js:70:29
+    at _fulfilled (C:\Users\Kunal\Desktop\n\node_modules\q\q.js:834:54)
+    at self.promiseDispatch.done (C:\Users\Kunal\Desktop\n\node_modules\q\q.js:863:30)
+    at Promise.promise.promiseDispatch (C:\Users\Kunal\Desktop\n\node_modules\q\q.js:796:13)
+    at C:\Users\Kunal\Desktop\n\node_modules\q\q.js:556:49
+    at runSingle (C:\Users\Kunal\Desktop\n\node_modules\q\q.js:137:13)
+    at flush (C:\Users\Kunal\Desktop\n\node_modules\q\q.js:125:13)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    </system-err>
+  
+
+  
+  </testsuite>
+</testsuites>
