@@ -1,0 +1,115 @@
+ I have used Visual Studio code.  These are installation steps    
+
+              Installation Steps
+
+1.Create a new folder for example newTestFramework
+
+2. Create a file called?—?nightwatch.js input this line
+
+require(“./node_modules/nightwatch/bin/runner.js”);
+
+3. npm init
+
+In your Terminal run the command npm init this will create a package.json file.
+Press Enter for all questions.
+
+4. Now we will install nightwatch using npm
+
+Run command in terminal?—?npm install nightwatch —- save
+
+5. Make new folders?—?mkdir pages tests lib
+
+/pages
+/tests
+/lib
+
+6. Download the latest version of Selenium Standalone —
+
+From SeleniumHQ?—?http://www.seleniumhq.org/download/
+
+Stanalone Jar file.
+
+7. Download the latest version of Chrome Driver?—?For window Make sure to download chromedriver.exe
+
+Based on your OS?—?https://chromedriver.storage.googleapis.com/index.html?path=2.33/
+
+8. From Downloaded folder, move both files?—?Selenium-Standalone-3.x.x. jar and chromedriver to /lib directory on your project.
+
+
+9. Create and Copy followingnightwatch.json and paste into your project. (source http://nightwatchjs.org/gettingstarted)
+
+{
+    "src_folders": ["tests"],
+    "output_folder": "reports/XMLReports",
+    "custom_commands_path": "",
+    "custom_assertions_path": "",
+    "page_objects_path": "pages",
+    "selenium": {
+      "start_process": true,
+      "server_path": "lib/drivers/selenium-server-standalone-3.8.1.jar",
+      "start_session": true,
+      "log_path": "log/",
+      "host": "127.0.0.1",
+      "port": 4444,
+      "cli_args": {
+        "webdriver.chrome.driver": "lib/drivers/chromedriver"
+      }
+    },
+    "test_settings" : {
+        "chrome": {
+            "launch_url": "http://localhost",
+            "selenium_port": 4444,
+            "selenium_host": "localhost",
+            "silent": true,
+            "screenshots": {
+              "enabled": false,
+              "path": "screenshots/Chrome/"
+            },
+            "desiredCapabilities": {
+              "browserName": "chrome",
+              "chromeOptions": {
+                "args": [
+                  "disable-web-security",
+                 "ignore-certificate-errors",
+                 "--test-type"
+                ]
+              }
+            }
+          },
+  
+      "edge" : {
+        "desiredCapabilities": {
+          "browserName": "MicrosoftEdge"
+        }
+      }
+    }
+  }
+
+10. Set path for selenium and chrome driver in nightwatch.json.
+
+
+13. Change the start_process:true
+
+14. Create a example file lets call it google.js
+
+Insert the code
+module.exports = {
+   tags: ['google'],
+   'Demo test Google' : function (browser) {
+        browser 
+        .url('http://www.google.com') // Go to a url
+        .waitForElementVisible('body', 1000) // wait till page loads
+        .assert.title('Google') // Make sure Site title matches
+        .assert.visible('input[type=text]') 
+        .setValue('input[type=text]', 'nightwatchjs') // send values
+        .click('button[name=btnG]') // click on search box
+        .pause(1000)
+        .end();
+      }
+};
+// = comment not necessary for code
+
+15. Finally! We’re ready to Run our Tests.
+
+
+In your terminal you can run?—?node nightwatch -e chrome -a tagname
